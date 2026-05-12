@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	/* Fonts */
+	--font-sans: "Manrope", "Work Sans", ui-sans-serif, system-ui, sans-serif;
+
+	/* Accent: Genoa (deep teal) */
+	--color-accent-50: #f0fdfc;
+	--color-accent-100: #ccfbf7;
+	--color-accent-200: #99f6ef;
+	--color-accent-300: #5eeadf;
+	--color-accent-400: #2dd4c7;
+	--color-accent-500: #14b8ab;
+	--color-accent-600: #0d948a;
+	--color-accent-700: #0f766e; /* primary accent */
+	--color-accent-800: #115e58;
+	--color-accent-900: #134e49;
+	--color-accent-950: #042f2c;
+
+	/* Info: Governor Bay (indigo) */
+	--color-info-50: #efeeff;
+	--color-info-100: #e2e0ff;
+	--color-info-200: #cbc7fe;
+	--color-info-300: #aca5fc;
+	--color-info-400: #8a81f8;
+	--color-info-500: #6e63f1;
+	--color-info-600: #5246e5;
+	--color-info-700: #4338ca;
+	--color-info-800: #3930a3;
+	--color-info-900: #342e81;
+	--color-info-950: #1f1b4b;
+
+	/* Success: Emerald */
+	--color-success-50: #ecfdf3;
+	--color-success-100: #d1fae0;
+	--color-success-200: #a6f4c5;
+	--color-success-300: #6ee7a0;
+	--color-success-400: #34d37a;
+	--color-success-500: #22c55e;
+	--color-success-600: #16a34a;
+	--color-success-700: #15803d;
+	--color-success-800: #166534;
+	--color-success-900: #14532d;
+	--color-success-950: #052e16;
+
+	/* Warning: Fiery Orange (amber) */
+	--color-warn-50: #fff4eb;
+	--color-warn-100: #fedfc7;
+	--color-warn-200: #fdbc8a;
+	--color-warn-300: #fc994d;
+	--color-warn-400: #fb8124;
+	--color-warn-500: #f5700b;
+	--color-warn-600: #d96106;
+	--color-warn-700: #b45309;
+	--color-warn-800: #92470e;
+	--color-warn-900: #783c0f;
+	--color-warn-950: #452003;
+
+	/* Neutral: Shark (charcoal) */
+	--color-neutral-50: #f5f8fa;
+	--color-neutral-100: #eaeff4;
+	--color-neutral-200: #d1dde6;
+	--color-neutral-300: #a9bfd0;
+	--color-neutral-400: #7b9db5;
+	--color-neutral-500: #5a819d;
+	--color-neutral-600: #476882;
+	--color-neutral-700: #3a546a;
+	--color-neutral-800: #334859;
+	--color-neutral-900: #2e3e4c;
+	--color-neutral-950: #1f2933;
+}
+
+/* Global defaults */
+:root {
+	@apply font-sans bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50;
+}
+
+/* Typography for headings using Tailwind @apply */
+h1 {
+	@apply font-sans font-bold text-4xl leading-tight tracking-tight;
+}
+h2 {
+	@apply font-sans font-bold text-3xl leading-snug;
+}
+h3 {
+	@apply font-sans font-bold text-2xl leading-snug;
+}
+h4 {
+	@apply font-sans font-semibold text-xl leading-snug;
+}

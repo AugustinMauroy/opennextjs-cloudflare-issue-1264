@@ -1,0 +1,45 @@
+{
+  "version": "0.0.0_1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
+    "types-check": "node --run cf-typegen && tsc --noEmit && echo 'Type check passed!'",
+    "db:migrate:create": "wrangler d1 migrations create issue-1264-repro",
+    "db:migrate:local": "wrangler d1 migrations apply issue-1264-repro --local",
+    "db:migrate:remote": "wrangler d1 migrations apply issue-1264-repro --remote",
+    "db:seed:local": "wrangler d1 execute issue-1264-repro --local --command",
+    "prisma:generate": "prisma generate",
+    "prisma:diff": "prisma migrate diff --from-empty --to-schema",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@opennextjs/cloudflare": "^1.19.9",
+    "@prisma/adapter-d1": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "better-auth": "^1.6.10",
+    "classnames": "^2.5.1",
+    "next": "16.2.6",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^24.12.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "prisma": "^7.8.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.90.0"
+  }
+}
